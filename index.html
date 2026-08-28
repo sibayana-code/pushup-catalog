@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Push-up catalog</title>
+<style>
+  :root { color-scheme: light dark; --bg:#f6f4ef; --ink:#1a1916; --muted:#5c574e; --card:#fff; --line:#e6e1d6; --accent:#b45309; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#161513; --ink:#f3efe6; --muted:#b7b0a4; --card:#221f1b; --line:#3a342c; --accent:#f5b461; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; font: 16px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background:var(--bg); color:var(--ink); }
+  header { padding: 1.25rem 1.1rem 0.4rem; max-width: 720px; margin: 0 auto; }
+  h1 { font-size: 1.6rem; margin: 0 0 .4rem; }
+  h2 { font-size: 1.2rem; margin: 1.6rem 0 .5rem; }
+  h3 { font-size: 1.05rem; margin: 0 0 .35rem; }
+  p, li { color: var(--ink); }
+  .muted { color: var(--muted); }
+  main { max-width: 720px; margin: 0 auto; padding: 0 1.1rem 3rem; }
+  ol, ul { padding-left: 1.2rem; }
+  li { margin: .28rem 0; }
+  .nav { display:flex; flex-wrap:wrap; gap:.4rem; margin: 1rem 0 0; }
+  .nav a { font-size:.78rem; text-decoration:none; color:var(--accent); background:var(--card); border:1px solid var(--line); padding:.25rem .5rem; border-radius:999px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding: .9rem; margin: .85rem 0; }
+  .card img { width:100%; height:auto; border-radius:10px; display:block; margin-top:.6rem; }
+  code { font-size: .86em; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Push-up catalog</h1>
+  <p class="muted">Home. Target RIR 2–3. Match the ID in the Gym log.</p>
+  <nav class="nav"><a href="#pu-wall">pu-wall</a><a href="#pu-incline">pu-incline</a><a href="#pu-knee">pu-knee</a><a href="#pu-std">pu-std</a><a href="#pu-wide">pu-wide</a><a href="#pu-narrow">pu-narrow</a><a href="#pu-low">pu-low</a><a href="#pu-diamond">pu-diamond</a><a href="#pu-deficit">pu-deficit</a><a href="#pu-decline">pu-decline</a><a href="#pu-pike">pu-pike</a></nav>
+</header>
+<main>
+<section>
+  <h2>Short guide</h2>
+  <p>A push-up is a moving plank. Keep a stiff line while the arms bend and straighten. Chest and triceps work. Neck, low back, and hips stay quiet.</p>
+  <h2>Principles</h2>
+  <ol>
+    <li>Brace first. Glutes and abs on before the elbows bend.</li>
+    <li>Full range. Chest to about a fist off the floor. Lock out at the top without shrugging.</li>
+    <li>Elbows about 45° from the body, not flared to 90°. Narrow, low, and diamond stay tucked on purpose.</li>
+    <li>One speed. About two seconds down, press up. No bounce, no half reps.</li>
+    <li>Stop while it is still a push-up. Last 2–3 reps hard, form still clean. That is RIR 2–3.</li>
+  </ol>
+  <h2>What a good one should feel like</h2>
+  <ul>
+    <li>Load in the chest and the back of the arms, not the neck.</li>
+    <li>Shoulders packed, not creeping toward the ears.</li>
+    <li>Last reps feel far from the floor, but the line still holds.</li>
+    <li>You could grind 2–3 more clean reps if you had to. That is the target, not failure.</li>
+    <li>Low back sags: abs quit. Butt pikes: you are hiding from the range. Front of the shoulder or wrists bark: hands too far forward or elbows flared.</li>
+  </ul>
+  <h2>How to get it</h2>
+  <ul>
+    <li>Match the catalog photo for that ID before the set.</li>
+    <li>First rep is a check: can you pause a beat at the bottom with the line intact? If not, go one easier ID.</li>
+    <li>Side view is the truth. Film one set when you can and compare to the photo.</li>
+    <li>Two sessions in a row at RIR 2–3 with clean form: add reps, add a set, or take the next harder ID.</li>
+    <li>Broken line or cut range: that set does not count. Easier ID next time.</li>
+  </ul>
+</section>
+<section>
+  <h2>Catalog</h2>
+  <p class="muted">Easier to harder.</p>
+  
+<article class="card" id="pu-wall">
+  <h3><code>pu-wall</code> Wall push-up</h3>
+  <p>Hands on wall, body straight, walk feet back. Chest, triceps, shoulders. Use when the floor is too hard.</p>
+  <img src="img/pu-wall.jpg" alt="Wall push-up" />
+</article>
+<article class="card" id="pu-incline">
+  <h3><code>pu-incline</code> Incline push-up</h3>
+  <p>Hands on bench, sofa, or table. Building volume.</p>
+  <img src="img/pu-incline.jpg" alt="Incline push-up" />
+</article>
+<article class="card" id="pu-knee">
+  <h3><code>pu-knee</code> Knee push-up</h3>
+  <p>Knees down, still a straight line from head to knees. Last reps when full form breaks.</p>
+  <img src="img/pu-knee.jpg" alt="Knee push-up" />
+</article>
+<article class="card" id="pu-std">
+  <h3><code>pu-std</code> Standard push-up</h3>
+  <p>Hands under shoulders, feet together or small V. Default.</p>
+  <img src="img/pu-std.jpg" alt="Standard push-up" />
+</article>
+<article class="card" id="pu-wide">
+  <h3><code>pu-wide</code> Wide push-up</h3>
+  <p>Hands outside shoulders. Chest bias.</p>
+  <img src="img/pu-wide.jpg" alt="Wide push-up" />
+</article>
+<article class="card" id="pu-narrow">
+  <h3><code>pu-narrow</code> Narrow / hands-in</h3>
+  <p>Hands closer than shoulders, still on the floor. Triceps, inner chest. Matches Friday “hands near center”.</p>
+  <img src="img/pu-narrow.jpg" alt="Narrow / hands-in" />
+</article>
+<article class="card" id="pu-low">
+  <h3><code>pu-low</code> Hands-low / triceps</h3>
+  <p>Hands lower on the ribs, elbows stay tucked. Triceps. Matches Friday “hands low”.</p>
+  <img src="img/pu-low.jpg" alt="Hands-low / triceps" />
+</article>
+<article class="card" id="pu-diamond">
+  <h3><code>pu-diamond</code> Diamond</h3>
+  <p>Thumbs and index fingers touch under chest. When hands-low is too easy.</p>
+  <img src="img/pu-diamond.jpg" alt="Diamond" />
+</article>
+<article class="card" id="pu-deficit">
+  <h3><code>pu-deficit</code> Deficit</h3>
+  <p>Hands on books/blocks, chest between. Extra range.</p>
+  <img src="img/pu-deficit.jpg" alt="Deficit" />
+</article>
+<article class="card" id="pu-decline">
+  <h3><code>pu-decline</code> Decline</h3>
+  <p>Feet on a chair. Upper chest, shoulders.</p>
+  <img src="img/pu-decline.jpg" alt="Decline" />
+</article>
+<article class="card" id="pu-pike">
+  <h3><code>pu-pike</code> Pike</h3>
+  <p>Hips high, head toward floor. Shoulder work, not a chest default.</p>
+  <img src="img/pu-pike.jpg" alt="Pike" />
+</article>
+</section>
+</main>
+</body>
+</html>
