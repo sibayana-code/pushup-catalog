@@ -21,10 +21,33 @@
   ol, ul { padding-left: 1.2rem; }
   li { margin: .28rem 0; }
   .nav { display:flex; flex-wrap:wrap; gap:.4rem; margin: 1rem 0 0; }
-  .nav a { font-size:.78rem; text-decoration:none; color:var(--accent); background:var(--card); border:1px solid var(--line); padding:.25rem .5rem; border-radius:999px; }
+  .nav a { font-size:.8rem; text-decoration:none; color:var(--accent); background:var(--card); border:1px solid var(--line); padding:.45rem .7rem; min-height:44px; display:inline-flex; align-items:center; border-radius:999px; }
   .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding: .9rem; margin: .85rem 0; }
-  .card img { width:100%; height:auto; border-radius:10px; display:block; margin-top:.6rem; }
+  article.card img { width:100%; max-width:100%; height:auto; border-radius:10px; display:block; margin-top:.6rem; border:1px solid var(--line); }
   code { font-size: .86em; }
+
+  .chips { display:flex; flex-wrap:wrap; gap:.35rem; margin:0 0 .5rem; }
+  .tag { display:inline-block; font-size:.72rem; font-weight:700; letter-spacing:.02em; padding:.15rem .45rem; border-radius:999px; border:1px solid var(--line); line-height:1.25; }
+  .tag-p { background:var(--accent); border-color:var(--accent); color:#fff; }
+  .tag-s { color:var(--muted); background:transparent; }
+  @media (prefers-color-scheme: dark) {
+    .tag-p { color:#1a1916; }
+  }
+
+  .legend { display:flex; gap:.75rem; align-items:flex-start; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:.7rem .8rem; margin:.55rem 0 1rem; }
+  .legend svg { width:64px; height:auto; flex-shrink:0; }
+  .legend-copy { font-size:.82rem; line-height:1.4; }
+  .legend-copy p { margin:.12rem 0; }
+  .legend-copy .chips { margin:.15rem 0 .35rem; }
+  .sil-base { fill:var(--line); }
+  .sil-upper-chest { fill:var(--accent); fill-opacity:.95; }
+  .sil-mid-chest { fill:var(--accent); fill-opacity:.7; }
+  .sil-lower-chest { fill:var(--accent); fill-opacity:.45; }
+  .sil-inner-chest { fill:var(--ink); fill-opacity:.28; }
+  .sil-front-delts { fill:var(--accent); fill-opacity:.7; }
+  .sil-shoulders { fill:var(--muted); fill-opacity:.55; }
+  .sil-triceps { fill:var(--accent); fill-opacity:.45; }
+  .sil-abs { fill:var(--muted); fill-opacity:.4; }
 </style>
 </head>
 <body>
@@ -65,59 +88,134 @@
 <section>
   <h2>Catalog</h2>
   <p class="muted">Easier to harder.</p>
-  
+  <aside class="legend" aria-label="Muscle names">
+    <svg viewBox="0 0 80 128" role="img" aria-label="Shared muscle map: upper-chest, mid-chest, lower-chest, inner-chest, triceps, front-delts, shoulders, abs">
+      <title>Muscle names</title>
+      <circle class="sil-base" cx="40" cy="12" r="9"/>
+      <rect class="sil-base" x="36" y="20" width="8" height="7" rx="2"/>
+      <ellipse class="sil-shoulders" cx="22" cy="34" rx="10" ry="7"/>
+      <ellipse class="sil-shoulders" cx="58" cy="34" rx="10" ry="7"/>
+      <ellipse class="sil-front-delts" cx="24" cy="38" rx="7" ry="6"/>
+      <ellipse class="sil-front-delts" cx="56" cy="38" rx="7" ry="6"/>
+      <ellipse class="sil-upper-chest" cx="32" cy="40" rx="7" ry="5"/>
+      <ellipse class="sil-upper-chest" cx="48" cy="40" rx="7" ry="5"/>
+      <ellipse class="sil-mid-chest" cx="31" cy="49" rx="8" ry="6"/>
+      <ellipse class="sil-mid-chest" cx="49" cy="49" rx="8" ry="6"/>
+      <ellipse class="sil-lower-chest" cx="32" cy="58" rx="7" ry="5"/>
+      <ellipse class="sil-lower-chest" cx="48" cy="58" rx="7" ry="5"/>
+      <rect class="sil-inner-chest" x="37" y="38" width="6" height="24" rx="2"/>
+      <rect class="sil-triceps" x="11" y="42" width="8" height="28" rx="4"/>
+      <rect class="sil-triceps" x="61" y="42" width="8" height="28" rx="4"/>
+      <rect class="sil-base" x="26" y="68" width="28" height="36" rx="8"/>
+      <rect class="sil-abs" x="34" y="70" width="12" height="28" rx="4"/>
+    </svg>
+    <div class="legend-copy">
+      <p class="chips">
+        <span class="tag tag-p">primary</span>
+        <span class="tag tag-s">secondary</span>
+      </p>
+      <p>Chest regions: <code>upper-chest</code>, <code>mid-chest</code> (default), <code>lower-chest</code>, <code>inner-chest</code>. Umbrella <code>chest</code> is those four — cards name the region.</p>
+      <p>Also: triceps, front-delts, shoulders, abs.</p>
+      <p class="muted">Serratus + abs/glutes keep the plank line.</p>
+    </div>
+  </aside>
+
 <article class="card" id="pu-wall">
   <h3><code>pu-wall</code> Wall push-up</h3>
-  <p>Hands on wall, body straight, walk feet back. Chest, triceps, shoulders. Use when the floor is too hard.</p>
+  <p class="chips" aria-label="Muscles">
+    <span class="tag tag-p">mid-chest</span><span class="tag tag-p">triceps</span>
+    <span class="tag tag-s">front-delts</span><span class="tag tag-s">abs</span>
+  </p>
+  <p>Hands on wall, body straight, walk feet back. Mid-chest and triceps. Use when the floor is too hard.</p>
   <img src="img/pu-wall.jpg" alt="Wall push-up" />
 </article>
 <article class="card" id="pu-incline">
   <h3><code>pu-incline</code> Incline push-up</h3>
-  <p>Hands on bench, sofa, or table. Building volume.</p>
+  <p class="chips" aria-label="Muscles">
+    <span class="tag tag-p">mid-chest</span><span class="tag tag-p">triceps</span>
+    <span class="tag tag-s">front-delts</span><span class="tag tag-s">abs</span>
+  </p>
+  <p>Hands on bench, sofa, or table. Easier leverage; still mid-chest. Building volume.</p>
   <img src="img/pu-incline.jpg" alt="Incline push-up" />
 </article>
 <article class="card" id="pu-knee">
   <h3><code>pu-knee</code> Knee push-up</h3>
-  <p>Knees down, still a straight line from head to knees. Last reps when full form breaks.</p>
+  <p class="chips" aria-label="Muscles">
+    <span class="tag tag-p">mid-chest</span><span class="tag tag-p">triceps</span>
+    <span class="tag tag-s">front-delts</span><span class="tag tag-s">abs</span>
+  </p>
+  <p>Knees down, still a straight line from head to knees. Mid-chest default. Last reps when full form breaks.</p>
   <img src="img/pu-knee.jpg" alt="Knee push-up" />
 </article>
 <article class="card" id="pu-std">
   <h3><code>pu-std</code> Standard push-up</h3>
-  <p>Hands under shoulders, feet together or small V. Default.</p>
+  <p class="chips" aria-label="Muscles">
+    <span class="tag tag-p">mid-chest</span><span class="tag tag-p">triceps</span>
+    <span class="tag tag-s">front-delts</span><span class="tag tag-s">abs</span>
+  </p>
+  <p>Hands under shoulders, feet together or small V. Mid-chest default.</p>
   <img src="img/pu-std.jpg" alt="Standard push-up" />
 </article>
 <article class="card" id="pu-wide">
   <h3><code>pu-wide</code> Wide push-up</h3>
-  <p>Hands outside shoulders. Chest bias.</p>
+  <p class="chips" aria-label="Muscles">
+    <span class="tag tag-p">mid-chest</span>
+    <span class="tag tag-s">triceps</span><span class="tag tag-s">front-delts</span>
+  </p>
+  <p>Hands outside shoulders. Mid-chest with more pec stretch.</p>
   <img src="img/pu-wide.jpg" alt="Wide push-up" />
 </article>
 <article class="card" id="pu-narrow">
   <h3><code>pu-narrow</code> Narrow / hands-in</h3>
-  <p>Hands closer than shoulders, still on the floor. Triceps, inner chest. Matches Friday “hands near center”.</p>
+  <p class="chips" aria-label="Muscles">
+    <span class="tag tag-p">triceps</span><span class="tag tag-p">inner-chest</span>
+    <span class="tag tag-s">front-delts</span><span class="tag tag-s">abs</span>
+  </p>
+  <p>Hands closer than shoulders, still on the floor. Triceps and inner-chest. Matches Friday “hands near center”.</p>
   <img src="img/pu-narrow.jpg" alt="Narrow / hands-in" />
 </article>
 <article class="card" id="pu-low">
   <h3><code>pu-low</code> Hands-low / triceps</h3>
-  <p>Hands lower on the ribs, elbows stay tucked. Triceps. Matches Friday “hands low”.</p>
+  <p class="chips" aria-label="Muscles">
+    <span class="tag tag-p">triceps</span>
+    <span class="tag tag-s">inner-chest</span><span class="tag tag-s">abs</span>
+  </p>
+  <p>Hands lower on the ribs, elbows stay tucked. Triceps, with inner-chest. Matches Friday “hands low”.</p>
   <img src="img/pu-low.jpg" alt="Hands-low / triceps" />
 </article>
 <article class="card" id="pu-diamond">
   <h3><code>pu-diamond</code> Diamond</h3>
-  <p>Thumbs and index fingers touch under chest. When hands-low is too easy.</p>
+  <p class="chips" aria-label="Muscles">
+    <span class="tag tag-p">triceps</span>
+    <span class="tag tag-s">inner-chest</span><span class="tag tag-s">front-delts</span>
+  </p>
+  <p>Thumbs and index fingers touch under chest. Inner-chest helper. When hands-low is too easy.</p>
   <img src="img/pu-diamond.jpg" alt="Diamond" />
 </article>
 <article class="card" id="pu-deficit">
   <h3><code>pu-deficit</code> Deficit</h3>
-  <p>Hands on books/blocks, chest between. Extra range.</p>
+  <p class="chips" aria-label="Muscles">
+    <span class="tag tag-p">mid-chest</span><span class="tag tag-p">lower-chest</span>
+    <span class="tag tag-s">triceps</span><span class="tag tag-s">front-delts</span>
+  </p>
+  <p>Hands on books/blocks, chest between. Extra range — mid-chest and lower-chest stretch.</p>
   <img src="img/pu-deficit.jpg" alt="Deficit" />
 </article>
 <article class="card" id="pu-decline">
   <h3><code>pu-decline</code> Decline</h3>
-  <p>Feet on a chair. Upper chest, shoulders.</p>
-  <img src="img/pu-decline.jpg" alt="Decline" />
+  <p class="chips" aria-label="Muscles">
+    <span class="tag tag-p">upper-chest</span><span class="tag tag-p">front-delts</span>
+    <span class="tag tag-s">triceps</span><span class="tag tag-s">abs</span>
+  </p>
+  <p>Feet on a chair. Upper-chest bias, front-delts.</p>
+  <img src="img/pu-decline.jpg" alt="Decline push-up" />
 </article>
 <article class="card" id="pu-pike">
   <h3><code>pu-pike</code> Pike</h3>
+  <p class="chips" aria-label="Muscles">
+    <span class="tag tag-p">front-delts</span><span class="tag tag-p">shoulders</span>
+    <span class="tag tag-s">triceps</span><span class="tag tag-s">abs</span>
+  </p>
   <p>Hips high, head toward floor. Shoulder work, not a chest default.</p>
   <img src="img/pu-pike.jpg" alt="Pike" />
 </article>
